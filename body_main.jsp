@@ -1,8 +1,8 @@
 <%@ page contentType = "text/html;charset=utf-8" %>
 <%	%>
 	 <%-- CLASS는 스타일 적용시에 사용 되는 이름, 중첩 가능 --%>
-<%! String greeting = "쇼핑몰 메인 화면";
-      String tagline = "메인 화면 중간 부분";%>
+<%! String greeting = "Samsung main page";
+      String tagline = "main page middle";%>
 	<div class="jumbotron">
 		<div class="container">
 			<h1 class="display-3">
