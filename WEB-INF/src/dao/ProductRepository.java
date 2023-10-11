@@ -5,6 +5,12 @@ import dto.Product;
 public class ProductRepository {
 
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>(); // ArrayList를 Product로 캐스팅
+    private static ProductRepository instance = new ProductRepository();
+
+    
+    public static ProductRepository getInstance(){
+	return instance;
+   }
 
 	public ProductRepository() {
         
@@ -14,6 +20,7 @@ public class ProductRepository {
 		phone.setManufacturer("Apple");
 		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
+        phone.set name("Apple_iPhone.jpg");
         
 		Product notebook = new Product("LG_Gram", "LG PC 그램", 1500000);
 		notebook.setDescription("13.3-inch, IPS LED display, 5rd Generation Intel Core processors");
@@ -21,6 +28,7 @@ public class ProductRepository {
 		notebook.setManufacturer("LG");
 		notebook.setUnitsInStock(1000);
 		notebook.setCondition("Refurbished");
+        phone.setFilename("LG_Gram.jpg");
 
 		Product tablet = new Product("P1236", "Galaxy Tab S", 900000);
 		tablet.setDescription("212.8*125.6*6.6mm,  Super AMOLED display, Octa-Core processor");
@@ -70,7 +78,8 @@ public class ProductRepository {
 		d.setManufacturer("Samsung");
 		d.setUnitsInStock(1000);
 		d.setCondition("Old");
-		
+        
+        
 		// 위와 같이 상품 초기화 하고 아래에 상품을 추가
 
 		listOfProducts.add(phone);
@@ -102,4 +111,9 @@ public class ProductRepository {
 	public ArrayList<Product> getAllProducts() {
 		return listOfProducts;
 	}
+    
+    public void addProduct(Product product){
+        listOfProducts.add(product);
+    }
+    
 }
