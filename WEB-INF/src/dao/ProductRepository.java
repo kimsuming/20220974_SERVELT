@@ -20,7 +20,7 @@ public class ProductRepository {
 		phone.setManufacturer("Apple");
 		phone.setUnitsInStock(1000);
 		phone.setCondition("New");
-        phone.set name("Apple_iPhone.jpg");
+        phone.setFilename("Apple_iPhone.jpg");
         
 		Product notebook = new Product("LG_Gram", "LG PC 그램", 1500000);
 		notebook.setDescription("13.3-inch, IPS LED display, 5rd Generation Intel Core processors");
