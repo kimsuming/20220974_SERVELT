@@ -19,8 +19,8 @@
 
 	ArrayList<Product> goodsList = dao.getAllProducts();
 	Product goods = new Product();
-	for (int i = 0; i < goodsList.size(); i++) {
-		goods = goodsList.get(i);
+	for (int i = 0; i < goodsList.size(); i++) { 
+		goods = goodsList.get(i); 
 		if (goods.getProductId().equals(id)) {
 			break;
 		}

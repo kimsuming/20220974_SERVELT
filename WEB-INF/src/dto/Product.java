@@ -102,7 +102,7 @@ public class Product implements Serializable { // 인터페이스 선언
         return quantity;
     }
     
-    public void setQuantity(){
-        this.quantity = quantity;
+    public void setQuantity(int quantity) {
+	this.quantity = quantity;
     }
 }

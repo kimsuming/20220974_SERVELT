@@ -13,14 +13,15 @@
         <%
     	request.setCharacterEncoding("UTF-8");
 
-	    String productId = request.getParameter("productId");
-	    String name = request.getParameter("name");
-	    String unitPrice = request.getParameter("unitPrice");
-    	String description = request.getParameter("description");
-    	String manufacturer = request.getParameter("manufacturer");
-    	String category = request.getParameter("category");
-	    String unitsInStock = request.getParameter("unitsInStock");
-	    String condition = request.getParameter("condition");
+	String productId = multi.getParameter("productid”);
+	String name = multi.getParameter(“name”);
+	String unitPrice = multi.getParameter(“unitPrice”);
+	String description = multi.getParameter(“description”);
+	String manufacturer = multi.getParameter(“manufacturer”);
+	String category = multi.getParameter(“category”);
+	String unitsInStock = multi.getParameter(“unitsInStock”);
+	String condition = multi.getParameter(“condition”);
+
         
         Integer price;
         
@@ -34,6 +35,11 @@
 	    else
 	        stock = Long.valueOf(unitsInStock);
 
+                                          
+	Enumeration files = multi.getFileNames();
+	String fname = (String) files.nextElement();
+	String fileName = multi.getFilesystemName(fname);
+                                        
 	ProductRepository dao = ProductRepository.getInstance();
 
 	Product newProduct = new Product();
@@ -45,6 +51,8 @@
 	newProduct.setCategory(category);
 	newProduct.setUnitsInStock(stock);
 	newProduct.setCondition(condition);
+	newProduct.setFilename(fileName);
+
 
 	dao.addProduct(newProduct);
 

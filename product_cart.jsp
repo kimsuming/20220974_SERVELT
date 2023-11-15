@@ -20,21 +20,23 @@
         <jsp:include page="top_menu.jsp" />
         <div class="jumborton">
         <div class="container">
-            <h1 class="display-3">
-                장바구니
+            <br><br>
+            <h1 class="display-3" align = "center">
+                <b>장바구니</b>
             </h1>
         </div>
         </div>
+        <br>
         <div class="container">
             <div class="row">
                 <table width="100%">
                     <tr>
                         <td align="left"><a href="product_cart_remove_all.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a></td>
-                        <td align="right"><a href="#" class="btn btn-success">주문하기</a></td>
+                        <td align="right"><a href="../order/order_info.jsp?cartId=<%= cartId %>" class="btn btn-success">주문하기</a></td>
                     </tr>
                 </table>
             </div>
-            <div style="padding-top:500px">
+            <div style="padding-top:100px">
                 <table class="table table-hover">
                     <tr>
                         <th>상품</th>
