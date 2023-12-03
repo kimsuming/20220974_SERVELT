@@ -1,28 +1,20 @@
-<%@ page contentType = "text/html;charset=utf-8" %>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="dto.Product"%>
+<%@ page contentType = "text/html;charset=utf-8" session="false"%>
 <%@ page import="java.sql.*"%>
 <%@ include file="db/db_conn.jsp"%>
 
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" /> <%-- Repository가 Product를 포함하기 때문에 Repository만 설치 --%>
-
-<%	%>
 	 <%-- CLASS는 스타일 적용시에 사용 되는 이름, 중첩 가능 --%>
 
-<%! String greeting = "현재 페이지는 VGA 그래픽 카드 상품 목록입니다.";
-	String tagline = "하단 페이지 : 확인";%>
+<%! String greeting = "SAMSUNG ONLINE MARKET";
+	String tagline = " ";%>
 
     <div class="container">
 	<div class="jumbotron">
 		<div class="container">
-			<h3 class="display-4">
+			<h3 class="display-4" style="text-align:center">
 				<%=greeting%>
             </h3>
 		</div>
 	</div>
-<%
-	ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
-%>
 	<div class="container">
         <div class="row" align="center">
             <%
@@ -35,8 +27,6 @@
                 <div class="card bg-dark text-white">
                     <img src="img/product/<%=rs.getString("p_filename")%>" class="card-img" alt="...">
                     <div class="card-img-overlay">
-                    <h5 class="card-title">iPhone 이미지 샘플</h5>
-                    <p class="card-text">출처 : 구글 검색</p>
                     </div>
                 </div>
                 <h3><%=rs.getString("p_name")%></h3>

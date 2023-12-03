@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" session="false"%>
 <%@ page import = "java.sql.*" %> 
 <html> 
 <head>
